@@ -1,0 +1,83 @@
+readline #retourne la ligne que l'on a ecrit dans le teminale
+rl_clear_history
+rl_on_new_line
+rl_replace_line
+rl_redisplay
+add_history #ajoute le dernier input enregistrer a l'historique de commande
+
+
+tcsetattr
+tcgetattr
+tgetent
+tgetflag
+tgetnum
+tgetstr
+tgoto
+tputs
+
+access	#vérifie si le processus appelant peut accéder au fichier pathname
+
+fork 	#creer un processus enfant
+
+wait	#suspend l'exécution du processus appelant jusqu'à ce que l'un de ses fils se termine
+
+waitpid #la meme avec plus d'option
+
+wait3 et wait4  = waitpid +  retournent des infos dans sa struct rusage.
+wait3  	#attend n’importe quel fils
+wait4	#peut selectionner le/les fils a attendre
+
+getcwd	#retourne le chemin d'accès absolu du répertoire de travail courant 
+
+chdir	#remplace le répertoire de travail courant du processus appelant par celui indiqué dans le chemin path.
+execve	#exécute le programme correspondant au fichier
+
+stat	#récupère l'état du fichier pointé par path et remplit le tampon buf.
+
+lstat	#est identique à stat(), sauf que si path est un lien symbolique, il donne l'état du lien lui-même plutôt que celui du fichier visé.
+
+fstat	#est identique à stat, sauf que le fichier ouvert est pointé par le descripteur fd, obtenu avec open.
+
+unlink	# détruit un nom dans le système de fichiers. Si ce nom était le dernier lien sur un fichier, et si aucun processus n'a ouvert ce fichier, ce dernier est effacé
+
+dup et dup2 créent une copie du descripteur de fichier oldfd.
+dup		#utilise le plus petit numéro inutilisé pour le nouveau descripteur.
+
+dup2	# transforme newfd en une copie de oldfd, fermant auparavant newfd si besoin est
+
+pipe	# crée un tube, un canal unidirectionnel de données qui peut être utilisé pour la communication entre processus.
+
+opendir	#ouvre un flux répertoire correspondant au répertoire name, et renvoie un pointeur sur ce flux.
+
+readdir	#envoie un pointeur sur une structure dirent représentant l'entrée suivante du flux répertoire pointé par dir
+
+closedir#ferme le flux de répertoire associé à dir
+
+strerror#renvoie une chaîne décrivant le code d'erreur passé en argument errnum
+
+perror	#affiche un message sur la sortie d'erreur standard, décrivant la dernière erreur rencontrée durant un appel système ou une fonction de bibliothèque
+
+isatty	#renvoie 1 si desc est un descripteur de fichier ouvert connecté à un terminal, ou 0 autrement.
+
+ttyname	#renvoie un pointeur sur le chemin d'accès terminé par un octet nul du périphérique terminal ouvert associé au descripteur de fichier fd
+
+ttyslot	#renvoie la position de l'entrée du terminal en cours dans un fichier.
+
+ioctl	#modifie le comportement des périphériques sous-jacents des fichiers spéciaux
+
+getenv	#recherche dans la liste des variables d'environnement un variable nommée name, et renvoie un pointeur sur la chaîne value correspondante
+
+
+signal
+sigaction
+sigemptyset
+sigaddset
+kill
+exit
+open
+read
+close
+printf
+malloc
+free
+write
