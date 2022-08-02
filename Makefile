@@ -2,6 +2,7 @@ GREEN = /bin/echo -e "\x1b[1;3;32m$1\x1b[0m"
 CC = gcc -g
 CFLAGS = -Wall -Werror -Wextra 
 SRC =  	srcs/main.c \
+	srcs/ft_echo.c \
 
 OBJ = $(SRC:.c=.o)
 NAME = minishell

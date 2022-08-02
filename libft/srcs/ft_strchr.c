@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: equesnel <equesnel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: equesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 16:54:03 by equesnel          #+#    #+#             */
-/*   Updated: 2022/08/03 00:35:02 by equesnel         ###   ########.fr       */
+/*   Created: 2022/03/31 22:46:32 by equesnel          #+#    #+#             */
+/*   Updated: 2022/03/31 22:46:35 by equesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../inc/libft.h"
 
-void	ft_read()
+char	*ft_strchr(const char *s, int c)
 {
-	char	*input;
+	int				i;
+	unsigned char	c1;
 
-	input = NULL;
-	while (1)
+	c1 = (unsigned char) c;
+	i = 0;
+	while (s[i])
 	{
-		if (input)
-		{
-			free(input);
-			input = NULL;
-		}
-		input = readline("$>");
-		if (input)
-			add_history(input);
-		ft_check_echo(input);
+		if (s[i] == c1)
+			return ((char *)s + i);
+		i++;
 	}
-}
-
-int	main(void)
-{
-	ft_read();
+	if (s[i] == c1)
+		return ((char *)s + i);
 	return (0);
 }

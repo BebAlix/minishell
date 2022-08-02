@@ -6,7 +6,7 @@
 /*   By: equesnel <equesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:46:20 by equesnel          #+#    #+#             */
-/*   Updated: 2022/08/02 17:29:10 by equesnel         ###   ########.fr       */
+/*   Updated: 2022/08/03 00:33:09 by equesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,9 @@
 # include <readline/history.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include "../libft/inc/libft.h"
+
+char *ft_get_builtin(char *cmd);
+void ft_check_echo(char *cmd);
 
 #endif
