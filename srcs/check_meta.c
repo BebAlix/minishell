@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_universel.c                                  :+:      :+:    :+:   */
+/*   check_meta.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: equesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,26 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_meta(char	*str)
+#include "../inc/minishell.h"
+
+int	check_meta(char	c)
 {
-	char	*base;
 	int		len;
-	int		i;
 	int		x;
 
 	base = "<<<>>>*?[]{}()|;&^\$";
-	len = ft_strlen(base);
-	i = 0;
-	while(str[i])
+	x = 0;
+	while(base[x])
 	{
-		x = 0;
-		while(x < len)
-		{
-			if(str[i] == base[x])
-				return(1)
-			x++;	
-		}
-		i++;
+		if(c == base[x])
+			return(1)
+		x++;
 	}
 	return(0);
 }
