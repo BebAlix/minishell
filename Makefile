@@ -3,7 +3,7 @@ CC = gcc -g
 CFLAGS = -Wall -Werror -Wextra 
 SRC =  	srcs/main.c \
 	srcs/ft_echo.c \
-	check_meta.c \
+	srcs/check_meta.c \
 
 OBJ = $(SRC:.c=.o)
 NAME = minishell

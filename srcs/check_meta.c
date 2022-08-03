@@ -14,16 +14,16 @@
 
 int	check_meta(char	c)
 {
-	int		len;
+	char	*base;
 	int		x;
 
-	base = "<<<>>>*?[]{}()|;&^\$";
+	base = "<<<>>>*?[]{}()|;&^$";
 	x = 0;
-	while(base[x])
+	while (base[x])
 	{
 		if(c == base[x])
-			return(1)
+			return (1);
 		x++;
 	}
-	return(0);
+	return (0);
 }
