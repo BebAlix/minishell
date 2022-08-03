@@ -53,7 +53,7 @@ void ft_check_echo(char *cmd)
 			i++;
 		while(cmd[i] != ' ' && cmd[i])
 		{
-			ft_putchar_rl(cmd[i]);
+			ft_putchar_fd(cmd[i], 1);
 			i++;
 		}
 	}
