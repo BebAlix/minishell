@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: equesnel <equesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 16:46:20 by equesnel          #+#    #+#             */
-/*   Updated: 2022/08/04 03:56:03 by equesnel         ###   ########.fr       */
+/*   Created: 2022/08/04 03:28:22 by equesnel          #+#    #+#             */
+/*   Updated: 2022/08/04 03:56:35 by equesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "../inc/minishell.h"
 
-# include <readline/readline.h>
-# include <readline/history.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include "../libft/inc/libft.h"
-
-typedef struct s_def_char
+int	main(int ac, char **av)
 {
-	char c;
-	char quotes;
-	char bool_m;
-}		t_def_char;
+	t_def_char	*line;
+	int			i;
 
-char	ft_check_meta(char	c);
-t_def_char	*ft_parce_input(char *input);
-
-#endif
+	i = 0;
+	line = 0;
+	if (ac < 2)
+		return (0);
+	line = ft_parce_input(av[1]);
+	if (!line)
+		return (0);
+	while (line[i].c)
+		ft_putchar_fd(line[i++].c, 1);
+	free(line);
+}
